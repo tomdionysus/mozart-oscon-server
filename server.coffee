@@ -10,10 +10,14 @@ app.use (req, res) ->
 
 app.options "*", (req, res) ->
   res.header 'Access-Control-Allow-Origin', '*'
+  res.header 'Access-Control-Allow-Methods', 'GET, OPTIONS'
+  res.header 'Access-Control-Allow-Headers', 'Content-Type'
   res.end()
 
 app.get '/sessions', (req, res) ->
   res.header 'Access-Control-Allow-Origin', '*'
+  res.header 'Access-Control-Allow-Methods', 'GET, OPTIONS'
+  res.header 'Access-Control-Allow-Headers', 'Content-Type'
   res.sendfile("./oscon.json")
 
 port = process.env.PORT || 5000 
