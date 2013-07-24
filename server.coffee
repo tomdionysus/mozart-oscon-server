@@ -15,7 +15,8 @@ app.options "*", (req, res) ->
   res.header 'Access-Control-Allow-Methods', 'GET, OPTIONS'
   # try: 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
   res.header 'Access-Control-Allow-Headers', 'Content-Type'
-      
+  res.end()
+
 app.get '/sessions', (req, res) ->
   res.sendfile("./oscon.json")
 
